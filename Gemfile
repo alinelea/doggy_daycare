@@ -36,11 +36,13 @@ gem 'thin'
 gem 'awesome_print'
 gem 'annotate'
 gem 'stamp'
+gem 'annotate'
 
 group :development do
   gem 'starter_generators'
   gem 'faker'
   gem 'populator'
+  gem 'quiet_assets'
 end
 
 
