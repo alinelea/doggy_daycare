@@ -1,7 +1,7 @@
 class Owner < ActiveRecord::Base
   has_many :dogs
 
-  validates :first_name, :last_name, :phone, :evac_waiver
+  validates :first_name, :last_name, :phone, :evac_waiver, presence: true
 end
 
 # == Schema Information
