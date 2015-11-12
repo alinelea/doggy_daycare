@@ -15,6 +15,8 @@ class DogsController < ApplicationController
   # GET /dogs/new
   def new
     @dog = Dog.new
+    @breeds = Breed.order("breed_name")
+    @owners = Owner.order("last_name")
   end
 
   # GET /dogs/1/edit

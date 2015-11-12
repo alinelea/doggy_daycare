@@ -1,7 +1,7 @@
 class Breed < ActiveRecord::Base
   has_many :dogs
 
-  validates :first_name, :last_name, :phone, presence: true
+  validates :breed_name, presence: true
 end
 
 # == Schema Information
