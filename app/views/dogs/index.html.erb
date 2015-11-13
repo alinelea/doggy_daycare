@@ -6,7 +6,7 @@
 
     <div class="col-sm-4 col-xs-3 col-med-4">
 
-      <div class="panel panel-default">
+      <div class="panel <%= dog.in_daycare ? 'panel-success' : 'panel-default' %>">
         <div class="panel-heading">
           <h3 class="panel-title"> <%= dog.name %> <%= dog.owner.try(:last_name) %></h3>
         </div>

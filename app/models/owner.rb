@@ -7,6 +7,10 @@ class Owner < ActiveRecord::Base
     "#{last_name}, #{first_name}"
   end
 
+  # def evac_waiver_check
+  #   if :evac_waiver
+  #    link_to fa_icon('fa-check')
+  # end
 
 end
 
