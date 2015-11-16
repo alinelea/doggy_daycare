@@ -1,5 +1,7 @@
 class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
+  before_action :all_breeds, only: [:new, :edit]
+  before_action :all_owners, only: [:new, :edit]
 
   # GET /dogs
   # GET /dogs.json
@@ -15,8 +17,6 @@ class DogsController < ApplicationController
   # GET /dogs/new
   def new
     @dog = Dog.new
-    @breeds = Breed.order("breed_name")
-    @owners = Owner.order("last_name")
   end
 
   # GET /dogs/1/edit
@@ -64,6 +64,15 @@ class DogsController < ApplicationController
   end
 
   private
+
+    def all_breeds
+       @breeds = Breed.order("breed_name")
+    end
+
+    def all_owners
+      @owners = Owner.order("last_name")
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_dog
       @dog = Dog.find(params[:id])
