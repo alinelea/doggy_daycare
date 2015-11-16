@@ -6,7 +6,18 @@ class DogsController < ApplicationController
   # GET /dogs
   # GET /dogs.json
   def index
-    @dogs = Dog.all
+    # if we have the parameter, then only give me dogs that match
+    if params[:search]
+      @dogs = Dog.where("name LIKE ?", "%#{params[:search]}%")
+      # if no results found
+      if @dogs.size.zero?
+        flash[:notice] = "Sorry, no results found."
+       @dogs = Dog.all
+     end
+    # else, give me all dogs
+    else
+      @dogs = Dog.all
+    end
   end
 
   # GET /dogs/1
@@ -82,4 +93,4 @@ class DogsController < ApplicationController
     def dog_params
       params.require(:dog).permit(:name, :breed_id, :owner_id, :medical, :vet, :dob, :avatar, :in_daycare)
     end
-end
+  end
