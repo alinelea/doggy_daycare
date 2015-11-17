@@ -2,6 +2,7 @@ class Owner < ActiveRecord::Base
   has_many :dogs
 
   validates :first_name, :last_name, :phone, :evac_waiver, presence: true
+  phony_normalize :phone, default_country_code: 'US'
 
   def last_comma_first
     "#{last_name}, #{first_name}"
