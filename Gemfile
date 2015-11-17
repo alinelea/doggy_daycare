@@ -39,6 +39,7 @@ gem 'stamp'
 gem 'annotate'
 gem 'font-awesome-rails'
 gem "paperclip", "~> 4.3"
+gem 'phony_rails'
 
 group :development do
   gem 'starter_generators'

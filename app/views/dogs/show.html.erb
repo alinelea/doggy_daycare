@@ -35,7 +35,7 @@
 
 <p>
   <strong>In Daycare:</strong>
-  <%= link_to fa_icon('fa-check'), @dog.in_daycare  %>
+  <%= @dog.in_daycare ? fa_icon('check') : fa_icon('times')  %>
 </p>
 
 <%= link_to 'Edit', edit_dog_path(@dog), class: "btn btn-primary" %>

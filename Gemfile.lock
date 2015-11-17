@@ -93,6 +93,10 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    phony (2.15.8)
+    phony_rails (0.12.11)
+      activesupport (>= 3.0)
+      phony (~> 2.12)
     populator (1.0.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
@@ -179,6 +183,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   paperclip (~> 4.3)
+  phony_rails
   populator
   quiet_assets
   rails (= 4.2.4)

@@ -3,7 +3,7 @@
 <!-- Loop to generate breed filter buttons -->
 <%= link_to "All breeds", dogs_path, class: "btn btn-primary btn-sm" %>
 <% @breeds.each do |breed| %>
-  <a href="?breed_id=<%= breed.id %>" class: "btn btn-sm btn-primary">
+  <a href="?breed_id=<%= breed.id %>" class = "btn btn-sm btn-primary">
     <%= breed.breed_name %></a>
 <% end %>
 
