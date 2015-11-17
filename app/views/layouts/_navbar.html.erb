@@ -19,13 +19,16 @@
         <li><%= link_to "Contact", pages_contact_url %></li>
       </ul>
 
-    <!-- Dog search box -->
-    <%= form_tag("/dogs", method: :get, role: 'search', class: 'navbar-form navbar-left') do %>
-      <div class = "form-group">
-        <%= text_field_tag(:search, nil, placeholder: 'Find dog here', class: 'form-control input-sm') %>
-      </div>
-      <%= submit_tag('Search', class: 'btn btn-default btn-sm') %>
-    <% end %>
+<!-- User links -->
+      <ul class = "nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li> <%= link_to 'Account', edit_user_registration_path %> </li>
+          <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+        <% else %>
+          <li><%= link_to('Login', new_user_session_path)  %></li>
+          <li> <%= link_to 'Register', new_user_registration_path %> </li>
+        <% end %>
+      </ul>
 
     </div><!-- /.navbar-collapse -->
   </nav>

@@ -1,5 +1,15 @@
 <h1>Pooches</h1>
 
+<%# TODO: fix formatting %>
+
+<!-- Dog search box -->
+    <%= form_tag("/dogs", method: :get, role: 'search', class: 'navbar-form navbar-left') do %>
+      <div class = "form-group">
+        <%= text_field_tag(:search, nil, placeholder: 'Find dog here', class: 'form-control input-sm') %>
+      </div>
+      <%= submit_tag('Search', class: 'btn btn-default btn-sm') %>
+    <% end %>
+
 <!-- Loop to generate breed filter buttons -->
 <%= link_to "All breeds", dogs_path, class: "btn btn-primary btn-sm" %>
 <% @breeds.each do |breed| %>
